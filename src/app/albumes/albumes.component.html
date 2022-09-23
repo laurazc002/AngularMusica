@@ -1,4 +1,18 @@
 <app-menu></app-menu>
 
 
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-md-3 mt-5 text-center card mt-5 ms-5" *ngFor="let integrante of integrantes"> 
+            <img class="img-fluid w-100" src="{{albumes.}}" alt="foto" style="height: 500px; width:600px">
+            <h5>nombre: {{albumes.nombre}}</h5>
+            <h6>valorNoche: {{albumes.valorNoche}}</h6>
+            <h6>descripcion:{{albumes.descripcion}}</h6>
+            
+        </div>
+    </div>
+</div>
+
+
+
 <app-footer></app-footer>
