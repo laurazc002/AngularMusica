@@ -1,5 +1,5 @@
 import { Component} from '@angular/core';
-import { TopService } from '../services/top.service';
+import { SpotyService } from '../services/spoty.service';
 
 @Component({
   selector: 'app-albumes',
@@ -8,17 +8,18 @@ import { TopService } from '../services/top.service';
 })
 export class AlbumesComponent{
 
-  public respuestaServicio: any[]=[]
+  public canciones: any[]=[]
 
-  constructor(public peticion:TopService) {
+  constructor(public peticion:SpotyService) {
 
     //Como utilizar los datos que lleguen de un servicio(API)
 
-    this.peticion.buscar()
+    this.peticion.traerCanciones()
     .subscribe(respuesta=>{
-      this.respuestaServicio= respuesta.datos
+      this.canciones= respuesta.tracks
 
-      console.log(this.respuestaServicio)
+      console.log(this.canciones)
+
     })
 
    }
